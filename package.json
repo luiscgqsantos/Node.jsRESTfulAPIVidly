@@ -1,0 +1,19 @@
+{
+  "name": "vidly-app",
+  "version": "1.0.0",
+  "description": "Video manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luís Santos",
+  "license": "ISC",
+  "devDependencies": {
+    "jshint": "^2.10.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "joi": "^14.3.1",
+    "mongoose": "^5.7.11"
+  }
+}
