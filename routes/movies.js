@@ -1,3 +1,4 @@
+const auth = require('../middleware/auth');
 const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
@@ -21,7 +22,7 @@ router.get('/:id', async (req, res) => {
     res.send(movie);
 });
 
-router.post('/', async (req, res) => {
+router.post('/', auth, async (req, res) => {
 
     const {
         error
@@ -46,7 +47,7 @@ router.post('/', async (req, res) => {
     res.send(movie);
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', auth, async (req, res) => {
 
     const {
         error
@@ -73,7 +74,7 @@ router.put('/:id', async (req, res) => {
     res.send(movie);
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
 
     const movie = await Movie.findByIdAndRemove(req.params.id);
 

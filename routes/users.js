@@ -1,3 +1,6 @@
+const auth = require('../middleware/auth');
+const config = require('config');
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const _ = require('lodash')
 const express = require('express');
@@ -8,14 +11,9 @@ const {
     validate
 } = require('../models/user');
 
-router.get('/', async (req, res) => {
-    const user = await User.find().sort('name');
-    res.send(user);
-});
+router.get('/me', auth, async (req, res) => {
 
-router.get('/:id', async (req, res) => {
-    const user = await User.findById(req.params.id);
-    if (!user) return res.status(404).send('The user with the given ID was not found.');
+    const user = await User.findById(req.user._id).select('-password');
 
     res.send(user);
 });
@@ -40,7 +38,9 @@ router.post('/', async (req, res) => {
 
     await user.save();
 
-    res.send(_.pick(user, ['_id', 'name', 'email']));
+    const token = user.generateAuthToken();
+
+    res.header('x-auth-token', token).send(_.pick(user, ['_id', 'name', 'email']));
 
 });
 

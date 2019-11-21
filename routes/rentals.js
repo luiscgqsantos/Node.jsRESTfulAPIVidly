@@ -1,3 +1,4 @@
+const auth = require('../middleware/auth');
 const Fawn = require('fawn');
 const express = require('express');
 const mongoose = require('mongoose');
@@ -27,7 +28,7 @@ router.get('/:id', async (req, res) => {
     res.send(rental);
 });
 
-router.post('/', async (req, res) => {
+router.post('/', auth, async (req, res) => {
 
     const {
         error
