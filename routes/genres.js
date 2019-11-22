@@ -67,3 +67,22 @@ router.delete('/:id', [auth, admin], async (req, res) => {
 });
 
 module.exports = router;
+
+
+
+//Ou usamos a dependencia express-async-errors ou caso não seja possivel
+//é assim que temos que tratar da situação, juntamente com o middleware
+//async criado por nós.
+//const asyncMiddleware = require('../middleware/async');
+// router.get('/', asyncMiddleware(async (req, res) => {
+//     const genres = await Genre.find().sort('name');
+//     res.send(genres);
+// }));
+
+
+//Middleware async
+// module.exports = function (req, res, next) {
+//     if (!req.user.isAdmin) return res.status(403).send('Access denied');
+
+//     next();
+// }
