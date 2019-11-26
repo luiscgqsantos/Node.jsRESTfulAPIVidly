@@ -4,11 +4,12 @@
   "description": "Video manager",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watchAll"
   },
   "author": "Luís Santos",
   "license": "ISC",
   "devDependencies": {
+    "jest": "^24.9.0",
     "jshint": "^2.10.3"
   },
   "dependencies": {
