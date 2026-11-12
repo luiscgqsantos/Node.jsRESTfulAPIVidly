@@ -9,21 +9,21 @@
   "author": "Luís Santos",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^29.7.0",
-    "jshint": "^2.10.3"
+    "jest": "^30.5.2",
+    "jshint": "^2.13.6"
   },
   "dependencies": {
-    "bcrypt": "^5.0.0",
-    "config": "^3.3.8",
-    "express": "^4.22.3",
+    "bcrypt": "^6.0.0",
+    "config": "^5.0.1",
+    "express": "^5.3.0",
     "express-async-errors": "^3.1.1",
     "fawn": "^2.1.5",
-    "joi": "^17.13.9",
-    "joi-objectid": "^3.0.1",
-    "jsonwebtoken": "^9.0.0",
-    "lodash": "^4.17.21",
+    "joi": "^18.3.2",
+    "joi-objectid": "^4.0.2",
+    "jsonwebtoken": "^9.0.3",
+    "lodash": "^4.18.1",
     "mongoose": "^9.12.1",
-    "winston": "^2.4.0",
-    "winston-mongodb": "^3.0.0"
+    "winston": "^3.19.0",
+    "winston-mongodb": "^7.0.1"
   }
 }
